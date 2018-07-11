@@ -56,5 +56,5 @@ components:
           type: string
           example: 'user.save'
         message:
-          type: string
+          type: string | object
       description: 消息
