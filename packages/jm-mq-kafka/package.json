@@ -1,0 +1,40 @@
+{
+  "name": "jm-mq-kafka",
+  "version": "1.0.0",
+  "description": "mq for kafka",
+  "main": "./lib/index",
+  "scripts": {
+    "start": "jm-server",
+    "cluster": "jm-server --cluster",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jm-root/jm-mq-kafka.git"
+  },
+  "keywords": [
+    "javascript",
+    "jm-mq-kafka"
+  ],
+  "author": {
+    "name": "Jeff YU"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jm-root/jm-mq-kafka/issues"
+  },
+  "homepage": "https://github.com/jm-root/jm-mq-kafka",
+  "dependencies": {
+    "jm-ms-help": "^1.0.0",
+    "jm-server": "^1.0.9",
+    "kafka-node": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.4.3"
+  }
+}

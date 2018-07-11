@@ -1,0 +1,7 @@
+.git
+.idea
+.svn
+benchmark
+docs
+logs
+tests
