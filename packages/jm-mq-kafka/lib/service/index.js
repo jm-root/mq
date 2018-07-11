@@ -12,6 +12,7 @@ class Service {
     const url = new URL(opts.kafka)
     const client = new Kafka.Client(url.host)
     const producer = new Kafka.Producer(client)
+    this.client = client
     this.producer = producer
 
     producer.on('ready', () => {
