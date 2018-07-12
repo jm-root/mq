@@ -10,7 +10,10 @@ beforeAll(async () => {
     service.client,
     [
       {topic: 'test'}
-    ]
+    ],
+    {
+      groupId: 'test'
+    }
   )
 
   consumer.on('message', function (message) {

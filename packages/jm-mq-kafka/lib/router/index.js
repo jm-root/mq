@@ -25,23 +25,21 @@ module.exports = function (opts = {}) {
   let router = ms.router()
   service.wrapRoute = wraper(service)
 
+  async function filterReady () {
+    if (!service.ready) throw error.err(Err.FA_NOTREADY)
+  }
+
   async function produce (opts) {
-    let doc = service.produce(opts.data.topic, opts.data.message)
+    await service.produce(opts.params.topic, opts.data.message)
     return {ret: 1}
   }
 
   let wrap = service.wrapRoute
 
   router.use(help(service))
-    .use(function (opts, cb, next) {
-      if (!service.ready) {
-        let e = error.err(Err.FA_NOTREADY)
-        return cbErr(opts, cb, e)
-      }
-      next()
-    })
-    .add('/publish', 'post', wrap(produce))
-    .add('/produce', 'post', wrap(produce))
+    .use(wrap(filterReady, true))
+    .add('/:topic', 'post', wrap(produce))
+    .add('/:topic', 'get', wrap(produce))
 
   return router
 }

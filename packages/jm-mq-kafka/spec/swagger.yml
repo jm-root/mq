@@ -8,24 +8,15 @@ info:
   title: jm-mq-kafka-api
   description: MQ系统API
 paths:
-  /mq/publish:
+  /mq/{topic}:
     post:
       description: 发布消息
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Message'
-      responses:
-        '200':
-          description: 结果
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Ret'
-  /mq/produce:
-    post:
-      description: 生产消息
+      parameters:
+        - name: topic
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -52,9 +43,7 @@ components:
     Message:
       type: object
       properties:
-        topic:
-          type: string
-          example: 'user.save'
         message:
           type: string | object
+          description: 字符串或者对象
       description: 消息
