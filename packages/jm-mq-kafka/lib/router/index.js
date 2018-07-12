@@ -29,8 +29,9 @@ module.exports = function (opts = {}) {
     if (!service.ready) throw error.err(Err.FA_NOTREADY)
   }
 
-  async function produce (opts) {
-    await service.produce(opts.params.topic, opts.data.message)
+  async function send (opts) {
+    let data = Object.assign({}, opts.params, opts.data)
+    await service.send(data)
     return {ret: 1}
   }
 
@@ -38,8 +39,8 @@ module.exports = function (opts = {}) {
 
   router.use(help(service))
     .use(wrap(filterReady, true))
-    .add('/:topic', 'post', wrap(produce))
-    .add('/:topic', 'get', wrap(produce))
+    .add('/:topic', 'post', wrap(send))
+    .add('/:topic', 'get', wrap(send))
 
   return router
 }

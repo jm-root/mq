@@ -6,8 +6,11 @@ beforeAll(async () => {
   service = $
 })
 
-test('produce', async () => {
-  let doc = await service.produce('test', 'test')
+test('send', async () => {
+  let doc = await service.send({
+    topic: 'test',
+    message: 'test'
+  })
   console.log(doc)
   expect(doc).toBeTruthy()
 })

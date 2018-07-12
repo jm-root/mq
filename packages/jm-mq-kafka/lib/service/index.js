@@ -36,13 +36,13 @@ class Service {
     })
   }
 
-  async send (topic, message) {
+  async send (opts) {
     return this.onReady()
       .then(() => {
         return new Promise(resolve => {
           let payload = {
-            topic,
-            messages: JSON.stringify(message)
+            topic: opts.topic,
+            messages: JSON.stringify(opts.message)
           }
           this.producer.send(
             [payload],
@@ -57,14 +57,6 @@ class Service {
           )
         })
       })
-  }
-
-  async publish (topic, message) {
-    return this.send(topic, message)
-  }
-
-  async produce (topic, message) {
-    return this.send(topic, message)
   }
 }
 

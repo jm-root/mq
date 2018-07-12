@@ -6,8 +6,8 @@ beforeAll(async () => {
   router = $.router()
 })
 
-test('produce', async () => {
-  let doc = await router.post('/produce', {topic: 'test', message: 'test'})
+test('send', async () => {
+  let doc = await router.post('/test', {message: 'test'})
   console.log(doc)
   expect(doc).toBeTruthy()
 })
