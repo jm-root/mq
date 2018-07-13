@@ -17,7 +17,7 @@ test('send', async () => {
 
 test('send null', async () => {
   let doc = await service.send({
-    topic: 'test'
+    topic: 'test7'
   })
   console.log(doc)
   expect(doc).toBeTruthy()

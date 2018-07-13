@@ -1,0 +1,49 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/jm-root/jm-mq-mqtt/1.0.0
+info:
+  version: "1.0.0"
+  title: jm-mq-mqtt-api
+  description: MQ系统API
+paths:
+  /mq/{topic}:
+    post:
+      description: 发布消息
+      parameters:
+        - name: topic
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Message'
+      responses:
+        '200':
+          description: 结果
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ret'
+
+components:
+  schemas:
+    Ret:
+      type: object
+      properties:
+        ret:
+          type: integer
+          format: int32
+          description: 1 成功 0 失败
+      description: 操作结果
+    Message:
+      type: object
+      properties:
+        message:
+          type: string | object
+          description: 字符串或者对象
+      description: 消息

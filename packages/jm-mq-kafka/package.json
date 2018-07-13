@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jm-root/jm-mq-kafka.git"
+    "url": "https://github.com/jm-root/mq.git"
   },
   "keywords": [
     "javascript",
@@ -21,9 +21,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jm-root/jm-mq-kafka/issues"
+    "url": "https://github.com/jm-root/mq/issues"
   },
-  "homepage": "https://github.com/jm-root/jm-mq-kafka",
+  "homepage": "https://github.com/jm-root/mq",
   "dependencies": {
     "jm-ms-help": "^1.0.0",
     "jm-server": "^1.0.9",

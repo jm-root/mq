@@ -49,6 +49,7 @@ class Service {
             (err, doc) => {
               if (err) {
                 logger.error(`send fail: ${JSON.stringify(payload)}`)
+                logger.error(err)
                 throw err
               }
               logger.info(`send ok: ${JSON.stringify(payload)}`)

@@ -9,7 +9,7 @@ beforeAll(async () => {
   let consumer = new Kafka.Consumer(
     service.client,
     [
-      {topic: 'test'}
+      {topic: 'pay.update'}
     ],
     {
       groupId: 'test'
