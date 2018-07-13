@@ -1,12 +1,12 @@
 {
-  "name": "jm-config-mqtt",
-  "version": "0.0.1",
-  "description": "mqtt plugin for jm-config",
+  "name": "jm-mq-mqtt",
+  "version": "1.0.0",
+  "description": "mq for mqtt",
   "main": "./lib/index",
   "scripts": {
-    "start": "node node_modules/jm-server/bin/jm-server",
-    "cluster": "node node_modules/jm-server/bin/jm-server --cluster",
-    "test": "node test"
+    "start": "jm-server",
+    "cluster": "jm-server --cluster",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   },
   "keywords": [
     "javascript",
-    "jm-config-mqtt"
+    "jm-mq-mqtt"
   ],
   "author": {
     "name": "Jeff YU"
@@ -28,5 +28,8 @@
     "jm-ms-help": "^1.0.0",
     "jm-server": "^1.0.9",
     "mqtt": "^2.13.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
   }
 }

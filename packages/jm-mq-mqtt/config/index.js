@@ -4,7 +4,7 @@ let config = {
     debug: true,
     lng: 'zh_CN',
     port: 3000,
-    mqtt: 'mqtt://root:123@api.h5.jamma.cn',
+    mqtt: 'mqtt://root:123@test.jamma.cn',
     modules: {
       mq: {
         module: process.cwd() + '/lib'

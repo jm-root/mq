@@ -4,7 +4,7 @@ var config = {
     debug: true,
     lng: 'zh_CN',
     port: 3000,
-    kafka: 'zk://47.106.21.98:2181',
+    kafka: 'zk://test.jamma.cn',
     modules: {
       mq: {
         module: process.cwd() + '/lib'
