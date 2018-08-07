@@ -12,7 +12,7 @@ const router = require('./router')
  * @return {}
  */
 module.exports = function (opts = {}) {
-  ['kafka'].forEach(function (key) {
+  ['kafka', 'no_auto_create_topic'].forEach(function (key) {
     process.env[key] && (opts[key] = process.env[key])
   })
 

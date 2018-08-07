@@ -6,6 +6,18 @@ beforeAll(async () => {
   service = $
 })
 
+test('list topic', async () => {
+  let doc = await service.listTopic()
+  console.log(doc)
+  expect(doc).toBeTruthy()
+})
+
+test('create topic', async () => {
+  let doc = await service.createTopic('topic8')
+  console.log(doc)
+  expect(doc).toBeTruthy()
+})
+
 test('send', async () => {
   let doc = await service.send({
     topic: 'test',

@@ -29,6 +29,16 @@ module.exports = function (opts = {}) {
     if (!service.ready) throw error.err(Err.FA_NOTREADY)
   }
 
+  async function listTopic (opts) {
+    let doc = await service.listTopic()
+    return {rows: doc}
+  }
+
+  async function createTopic (opts) {
+    await service.createTopic(opts.data.topic)
+    return {ret: 1}
+  }
+
   async function send (opts) {
     let data = Object.assign({}, opts.params, opts.data)
     await service.send(data)
@@ -39,6 +49,8 @@ module.exports = function (opts = {}) {
 
   router.use(help(service))
     .use(wrap(filterReady, true))
+    .add('/topics', 'get', wrap(listTopic))
+    .add('/topics', 'post', wrap(createTopic))
     .add('/:topic', 'post', wrap(send))
     .add('/:topic', 'get', wrap(send))
 

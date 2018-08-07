@@ -1,6 +1,6 @@
 {
   "name": "jm-mq-kafka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mq for kafka",
   "main": "./lib/index",
   "scripts": {
@@ -31,5 +31,8 @@
   },
   "devDependencies": {
     "jest": "^22.4.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
