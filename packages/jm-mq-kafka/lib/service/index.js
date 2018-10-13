@@ -13,7 +13,13 @@ class Service {
     this.ready = false
     this.no_auto_create_topic = opts.no_auto_create_topic
     const url = new URL(opts.kafka)
-    const client = new Kafka.Client(url.host)
+    const {protocol, host} = url
+    let client = null
+    if (protocol === 'zk:') {
+      client = new Kafka.Client(host) // deprecated
+    } else {
+      client = new Kafka.KafkaClient({kafkaHost: host})
+    }
     const producer = new Kafka.Producer(client)
     this.client = client
     this.producer = producer
