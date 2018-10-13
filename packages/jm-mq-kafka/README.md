@@ -14,6 +14,6 @@ npm run cluster
 
 基本配置 请参考 [jm-server] (https://github.com/jm-root/jm-server)
 
-kafka [] Zookeeper uri zk://127.0.0.1:2181
+kafka [] Zookeeper uri: zk://127.0.0.1:2181 或者 kafka uri: kafka://127.0.0.1:9092
 
 no_auto_create_topic [false] 不自动创建主题, 默认false, 表示会自动创建
